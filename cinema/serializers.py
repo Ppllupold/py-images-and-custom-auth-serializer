@@ -41,6 +41,7 @@ class MovieSerializer(serializers.ModelSerializer):
         model = Movie
         fields = ("id", "title", "description", "duration",
                   "genres", "actors", "image")
+        extra_kwargs = {"image": {"read_only": True}}
 
 
 class MovieListSerializer(MovieSerializer):
